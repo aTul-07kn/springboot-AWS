@@ -52,7 +52,6 @@ public class Controller {
 
 		Type type = new TypeToken<ArrayList<UserData>>() {}.getType();
 		ArrayList<UserData> apiData = gson.fromJson(response.getBody(), type);
-
 		List<Response> filteredResponse = new ArrayList<Response>();
 		for (UserData user : apiData) {
 			Response res = new Response(user.getAddress().getGeo().getLat(), user.getAddress().getGeo().getLng(),
